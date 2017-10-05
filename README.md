@@ -33,8 +33,8 @@ The arrival and departure times of planes at an airport can be defined by a pair
 We can represent the times as a whole number of minutes after midnight on monday, at the start of some week.  For instance:
 
 - the time 7:17am on Monday this week would be recorded as `(7 * 60) + 17 = 437`
-- 14:25 on Tuesday would be recorded as `24*60*1 + (14 * 60) + 25`
-- 14:25 on Tuesday in the following week would be recorded as `24*60*8 + (14 * 60) + 25
+- 14:25 on Tuesday would be recorded as `(24 * 60 * 1) + (14 * 60) + 25`
+- 14:25 on Tuesday in the following week would be recorded as `(24 * 60 * 8) + (14 * 60) + 25`
 
 Plane `i` then arrives at time `arrives[i]` and departs at time `departs[i]`.  The number of gates an airport needs so that no plane needs to wait for a gate is equal to the maximum number of gates needed, over the time period covered by the given arrivals and departures
 
