@@ -6,22 +6,6 @@ Where you are to write functions, ensure you use constness and references where 
 
 Note this coursework has a split deadline: an earlier deadline for the airport gates and stacks question; and a later deadline for 'treasure hunt, continued'.
 
-## The PEP vector class -- technical note
-
-Like last week, to ensure you are using `vector` correctly, for this work you will be using a version specially adapted for this assignment.  It is used by all the skeleton code provided, and involves writing:
-
-`#include "vector.h"`  
-`using pep::vector;`  
-
-... instead of the usual:
-
-`#include <vector>`  
-`using std::vector;`  
-
-This should not affect your solution, but note that outwith this assignment you should use the regular std vector implementation where appropriate.
-
-
-
 # Calculating how many airport gates are needed [3 marks]
 
 The arrival and departure times of planes at an airport can be defined by a pair of vectors:
@@ -67,6 +51,7 @@ Conversely, if plane 2 had arrived *before* plane 1 had departed, e.g:
 
 Notes:
 
+- You can use the normal `std::vector` for this.
 - You can assume `arrives` is sorted into ascending order
 - One plane will never arrive at the exact same time another departs
 - The maximum arrival/departure time might be quite big (e.g. for an arrival in several weeks' or months' time)
@@ -128,7 +113,7 @@ In MapOfItems.h, make a class `MapOfItems`. It needs to have:
 - a public function 'addItem' for adding an item to the end of this vector
 - a public function 'size()' for returning the size of this vector
 
-
+You can use the normal `std::vector` for this.
 
 ## Taking a tour of the Map
 
