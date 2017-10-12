@@ -18,7 +18,7 @@ int maximumGates(vector<int> arrives, vector<int> departs) {
 	int i = 0;
 	int j = 0;
 
-	while ((i < arrives.size() || j < departs.size())) {
+	while ((i < arrives.size() && j < departs.size())) {
 
 			if (arrives[i] < departs[j]) {
 				gatesInUse++;
