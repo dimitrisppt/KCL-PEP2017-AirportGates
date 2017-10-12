@@ -5,7 +5,7 @@
 #include <iostream>
 #include <algorithm>
 using std::vector;
-using std::cout;
+
 
 // TODO: Your answer for question 2 goes here
 
@@ -18,24 +18,21 @@ int maximumGates(vector<int> arrives, vector<int> departs) {
 	int i = 0;
 	int j = 0;
 
-	while ((i < arrives.size() && j < departs.size())) {
+	while ((i < arrives.size() || j < departs.size())) {
 
-			if (arrives[i] < departs[j-i]) {
+			if (arrives[i] < departs[j]) {
 				gatesInUse++;
+				i++;
 			} else {
 				gatesInUse--;
+				j++;
 			}
-
-			cout << "Gates in use: " << gatesInUse << "\n";
 
 			if (maxGates < gatesInUse) {
 				maxGates = gatesInUse;
 			}
-			i++; j++;
 	}
-
 	return maxGates;
-
 }
 
 // Do not write any code below this line
