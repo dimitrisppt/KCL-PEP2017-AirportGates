@@ -31,7 +31,6 @@ class MapOfItems {
      double currentTime = 0;
      double walkTime = 0;
 
-
      vector<Item> visitedItems;
      vector<Item> tempVect = tour;
      Item currentItem = tour[0];
@@ -50,13 +49,13 @@ class MapOfItems {
      tempVect.erase(tempVect.begin() + currentPos);
   //   cout << "Start while loop" << endl;
 
-     while (currentTime < 3600 && tempVect.size() != 0) {
+     while (currentTime < 3600 && tempVect.size() > 0) {
 
       vector<double> visit;
 
     //  cout << "first for loop" << endl;
       for (int i=0; i<tempVect.size(); i++) {
-        int visitI = 0;
+        double visitI = 0;
         walkTime = currentItem.distanceTo(tempVect[i]) / walkSpeed;
         visitI = walkTime + currentTime;
 
@@ -74,7 +73,7 @@ class MapOfItems {
       double minVisit = visit[0];
       for (int i=0; i<visit.size(); i++) {
 
-        if (minVisit > visit[i]) {
+        if (visit[i] <= minVisit)   {
           minVisit = visit[i];
           currentItem = tempVect[i];
           currentPos = i;
@@ -85,14 +84,8 @@ class MapOfItems {
       if (minVisit < 3600) {
         visitedItems.push_back(tempVect[currentPos]);
         tempVect.erase(tempVect.begin() + currentPos);
-
-
       }
       currentTime = minVisit;
-
-
-      cout << "End of a loop. Current time is " << currentTime
-      << " and tempVect size is " << tempVect.size() <<endl;
      }
     // cout << "End while loop" << endl;
      return visitedItems;
