@@ -7,7 +7,6 @@
 
 using std::vector;
 
-
 // TODO: your code goes here
 
 class MapOfItems {
